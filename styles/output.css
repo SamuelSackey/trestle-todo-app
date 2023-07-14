@@ -763,6 +763,16 @@ body {
   opacity: 0.8;
 }
 
+:is(.dark .dark\:border-dark-greyish-blue) {
+  --tw-border-opacity: 1;
+  border-color: hsl(236 9% 61% / var(--tw-border-opacity));
+}
+
+:is(.dark .dark\:border-darker-greyish-blue) {
+  --tw-border-opacity: 1;
+  border-color: hsl(235 19% 35% / var(--tw-border-opacity));
+}
+
 :is(.dark .dark\:bg-darker-greyish-blue) {
   --tw-bg-opacity: 1;
   background-color: hsl(235 19% 35% / var(--tw-bg-opacity));
@@ -794,4 +804,9 @@ body {
 :is(.dark .dark\:text-light-greyish-blue-dark) {
   --tw-text-opacity: 1;
   color: hsl(234 39% 85% / var(--tw-text-opacity));
+}
+
+:is(.dark .dark\:hover\:bg-dark-greyish-blue-dark:hover) {
+  --tw-bg-opacity: 1;
+  background-color: hsl(234 11% 52% / var(--tw-bg-opacity));
 }

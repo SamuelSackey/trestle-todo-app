@@ -20,7 +20,7 @@ const checkbox = (id, value) => {
           </div>
             `;
   }
-  return `<div id="${id}" class="rounded-full h-6 w-6 border border-light-greyish-blue hover:bg-light-greyish-blue-hover-dark checkbox"></div>`;
+  return `<div id="${id}" class="rounded-full h-6 w-6 border border-light-greyish-blue dark:border-darker-greyish-blue hover:bg-light-greyish-blue-hover-dark dark:hover:bg-dark-greyish-blue-dark checkbox"></div>`;
 };
 
 // load entries function
@@ -28,7 +28,7 @@ const loadEntries = () => {
   entryList.innerHTML = entries
     .map((entry) => {
       return `
-      <div class="p-3 flex items-center gap-2 dark:bg-darker-desaturated-blue-dark dark:text-light-greyish-blue-dark">
+      <div class="p-4 flex items-center gap-2 dark:bg-darker-desaturated-blue-dark dark:text-light-greyish-blue-dark">
           ${checkbox(entry.id, entry.done)}
           <div class="flex-1 truncate">
           ${entry.text}
@@ -36,7 +36,7 @@ const loadEntries = () => {
 
         
         <img src="/images/icon-cross.svg" alt="delete" id="${entry.id}"
-        class="flex items-center p-1 hover:bg-light-greyish-blue-hover-dark delete"/>
+        class="flex items-center p-1 rounded hover:bg-light-greyish-blue-hover-dark dark:hover:bg-dark-greyish-blue-dark delete"/>
         </div>
       `;
     })
