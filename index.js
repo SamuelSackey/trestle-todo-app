@@ -1,8 +1,10 @@
 const themeSwitch = document.getElementById("theme-switch");
 const entryInput = document.getElementById("entry-input");
 const entryList = document.getElementById("entry-list");
+const navigators = document.querySelectorAll(".navigator");
 const html = document.documentElement;
 let entries = [];
+let listStatus = "all";
 
 const checkbox = (id, value) => {
   if (value) {
@@ -25,7 +27,16 @@ const checkbox = (id, value) => {
 
 // load entries function
 const loadEntries = () => {
-  entryList.innerHTML = entries
+  let displayedEntries;
+  if (listStatus === "active") {
+    displayedEntries = entries.filter((entry) => entry.done === false);
+  } else if (listStatus === "completed") {
+    displayedEntries = entries.filter((entry) => entry.done === true);
+  } else {
+    displayedEntries = entries;
+  }
+
+  entryList.innerHTML = displayedEntries
     .map((entry) => {
       return `
       <div class="p-4 flex items-center gap-2 dark:bg-darker-desaturated-blue-dark dark:text-light-greyish-blue-dark">
@@ -42,7 +53,7 @@ const loadEntries = () => {
     })
     .join("");
 
-  // add event listeners to new element
+  // add event listeners for delete and checkbox buttons to new element
   document.querySelectorAll(".delete").forEach((deleteButton) => {
     deleteButton.addEventListener("click", deleteEntry);
   });
@@ -99,6 +110,20 @@ const randomId = () => {
   return id.join("");
 };
 
+// navigate function
+const navigate = (event) => {
+  const navigator = event.target;
+  navigator.classList.add("selected");
+  navigators.forEach((element) => {
+    if (element !== navigator) {
+      element.classList.remove("selected");
+    }
+  });
+
+  listStatus = event.target.id;
+  loadEntries();
+};
+
 // Event listeners
 document.addEventListener("DOMContentLoaded", loadEntries);
 
@@ -113,4 +138,8 @@ entryInput.addEventListener("keyup", (event) => {
     console.log(entryList);
     addEntry();
   }
+});
+
+navigators.forEach((navigator) => {
+  navigator.addEventListener("click", navigate);
 });
