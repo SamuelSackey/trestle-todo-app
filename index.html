@@ -7,6 +7,42 @@
     <link href="./styles/output.css" rel="stylesheet" />
   </head>
   <body>
-    <h1 class="text-darker-greyish-blue">TODO</h1>
+    <section
+      id="banner"
+      class="bg-[url('/images/bg-desktop-light.jpg')] bg-cover h-[30vh]"
+    >
+      <div
+        class="h-full mx-auto p-6 max-w-lg flex flex-col justify-center gap-6"
+      >
+        <div class="flex justify-between">
+          <h1 class="text-4xl font-bold tracking-widest text-white">TODO</h1>
+
+          <div class="flex items-center p-2">
+            <img src="/images/icon-moon.svg" alt="dark mode" class="" />
+          </div>
+        </div>
+
+        <form class="w-full bg-white p-4 rounded">
+          <div class="flex items-center gap-2">
+            <div class="rounded-full h-6 w-6 check-color"></div>
+
+            <input
+              type="text"
+              name="entry-input"
+              id="entry-input"
+              placeholder="Create a new todo..."
+              class="w-full outline-none"
+            />
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <div>
+      <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+      </ul>
+    </div>
   </body>
 </html>

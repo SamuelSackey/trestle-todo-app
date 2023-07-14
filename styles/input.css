@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-lg;
+  }
+}
+
+@layer components {
+  .check-color {
+    background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  }
+}
