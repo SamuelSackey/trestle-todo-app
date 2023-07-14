@@ -750,6 +750,10 @@ body {
   outline-offset: 2px;
 }
 
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .hover\:bg-light-greyish-blue-hover-dark:hover {
   --tw-bg-opacity: 1;
   background-color: hsl(236 33% 92% / var(--tw-bg-opacity));

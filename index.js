@@ -2,35 +2,25 @@ const themeSwitch = document.getElementById("theme-switch");
 const entryInput = document.getElementById("entry-input");
 const entryList = document.getElementById("entry-list");
 const html = document.documentElement;
-const entries = [
-  {
-    id: 1,
-    text: "test 1",
-    done: false,
-  },
-  {
-    id: 2,
-    text: "item 2",
-    done: true,
-  },
-];
+let entries = [];
 
 const checkbox = (id, value) => {
   if (value) {
     return `
             <div
             id="${id}"
-            class="rounded-full h-6 w-6 check-color border border-light-greyish-blue hover:opacity-80"
+            class="rounded-full h-6 w-6 check-color border border-light-greyish-blue hover:opacity-80 checkbox"
             >
             <img
               src="images/icon-check.svg"
               alt="uncheck"
+              id="${id}"
               class="m-auto h-full w-full p-[6px]"
             />
           </div>
             `;
   }
-  return `<div id="${id}" class="rounded-full h-6 w-6 border border-light-greyish-blue hover:bg-light-greyish-blue-hover-dark"></div>`;
+  return `<div id="${id}" class="rounded-full h-6 w-6 border border-light-greyish-blue hover:bg-light-greyish-blue-hover-dark checkbox"></div>`;
 };
 
 // load entries function
@@ -44,16 +34,22 @@ const loadEntries = () => {
           ${entry.text}
           </div>
 
-          <div
-            id="${entry.id}"
-            class="flex items-center p-1 hover:bg-light-greyish-blue-hover-dark"
-          >
-            <img src="/images/icon-cross.svg" alt="delete" />
-          </div>
+        
+        <img src="/images/icon-cross.svg" alt="delete" id="${entry.id}"
+        class="flex items-center p-1 hover:bg-light-greyish-blue-hover-dark delete"/>
         </div>
       `;
     })
     .join("");
+
+  // add event listeners to new element
+  document.querySelectorAll(".delete").forEach((deleteButton) => {
+    deleteButton.addEventListener("click", deleteEntry);
+  });
+
+  document.querySelectorAll(".checkbox").forEach((checkbox) => {
+    checkbox.addEventListener("click", toggleEntry);
+  });
 };
 
 const addEntry = () => {
@@ -69,6 +65,27 @@ const addEntry = () => {
     loadEntries();
     entryInput.value = "";
   }
+};
+
+const deleteEntry = (event) => {
+  const id = event.target.id;
+  const newEntries = entries.filter((entry) => entry.id !== id);
+
+  entries = newEntries;
+  loadEntries();
+};
+
+const toggleEntry = (event) => {
+  const id = event.target.id;
+  const entryIndex = entries.findIndex((entry) => entry.id === id);
+
+  if (entries[entryIndex].done) {
+    entries[entryIndex].done = false;
+  } else {
+    entries[entryIndex].done = true;
+  }
+
+  loadEntries();
 };
 
 // generate random id
