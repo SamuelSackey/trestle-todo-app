@@ -75,11 +75,11 @@
 
         <!-- Bottom Nav -->
         <div
-          class="grid grid-cols-3 items-center p-3 text-sm text-dark-greyish-blue"
+          class="grid grid-cols-2 sm:grid-cols-3 items-center p-3 text-sm text-dark-greyish-blue"
         >
           <div class="text-xs"><span id="items-number">5</span> items left</div>
 
-          <div class="flex gap-3">
+          <div class="hidden sm:flex gap-3">
             <span
               id="all"
               class="hover:text-darker-greyish-blue selected navigator"
@@ -101,6 +101,25 @@
           >
             Clear Completed
           </div>
+        </div>
+      </div>
+
+      <!-- small screen nav bar -->
+      <div
+        class="block sm:hidden bg-white dark:bg-darker-desaturated-blue-dark p-3 text-sm text-dark-greyish-blue mt-6 rounded shadow-2xl"
+      >
+        <div class="flex gap-3 items-center justify-center">
+          <span
+            id="all"
+            class="hover:text-darker-greyish-blue selected navigator"
+            >All</span
+          >
+          <span id="active" class="hover:text-darker-greyish-blue navigator"
+            >Active</span
+          >
+          <span id="completed" class="hover:text-darker-greyish-blue navigator"
+            >Completed</span
+          >
         </div>
       </div>
     </section>

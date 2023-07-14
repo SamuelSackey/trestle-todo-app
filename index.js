@@ -67,7 +67,9 @@ const loadEntries = () => {
   });
 
   //  Change items number
-  itemNumber.textContent = entries.length;
+  itemNumber.textContent = entries.filter(
+    (entry) => entry.done === false
+  ).length;
 };
 
 const addEntry = () => {
@@ -119,15 +121,20 @@ const randomId = () => {
 
 // navigate function
 const navigate = (event) => {
-  const navigator = event.target;
-  navigator.classList.add("selected");
+  const id = event.target.id;
+
+  selectedNavigators = document.querySelectorAll(`#${id}`);
+  selectedNavigators.forEach((navigator) =>
+    navigator.classList.add("selected")
+  );
+
   navigators.forEach((element) => {
-    if (element !== navigator) {
+    if (element.id !== id) {
       element.classList.remove("selected");
     }
   });
 
-  listStatus = event.target.id;
+  listStatus = id;
   loadEntries();
 };
 
