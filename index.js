@@ -1,5 +1,7 @@
+const themeSwitch = document.getElementById("theme-switch");
 const entryInput = document.getElementById("entry-input");
 const entryList = document.getElementById("entry-list");
+const html = document.documentElement;
 const entries = [
   {
     id: 1,
@@ -36,7 +38,7 @@ const loadEntries = () => {
   entryList.innerHTML = entries
     .map((entry) => {
       return `
-      <div class="p-3 flex items-center gap-2">
+      <div class="p-3 flex items-center gap-2 dark:bg-darker-desaturated-blue-dark dark:text-light-greyish-blue-dark">
           ${checkbox(entry.id, entry.done)}
           <div class="flex-1 truncate">
           ${entry.text}
@@ -82,6 +84,11 @@ const randomId = () => {
 
 // Event listeners
 document.addEventListener("DOMContentLoaded", loadEntries);
+
+themeSwitch.addEventListener("click", (event) => {
+  event.preventDefault();
+  html.classList.toggle("dark");
+});
 
 entryInput.addEventListener("keyup", (event) => {
   if (event.key === "Enter") {

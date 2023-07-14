@@ -6,10 +6,10 @@
     <title>TO-DO</title>
     <link href="./styles/output.css" rel="stylesheet" />
   </head>
-  <body>
+  <body class="dark:bg-dark-blue-dark">
     <section
       id="banner"
-      class="bg-[url('/images/bg-desktop-light.jpg')] bg-cover h-[30vh]"
+      class="bg-[url('/images/bg-desktop-light.jpg')] dark:bg-[url('/images/bg-desktop-dark.jpg')] bg-cover h-[30vh]"
     >
       <div
         class="h-full mx-auto p-6 max-w-lg flex flex-col justify-center gap-6"
@@ -17,12 +17,16 @@
         <div class="flex justify-between">
           <h1 class="text-4xl font-bold tracking-widest text-white">TODO</h1>
 
-          <div class="flex items-center p-2">
-            <img src="/images/icon-moon.svg" alt="dark mode" class="" />
+          <div id="theme-switch" class="flex items-center p-2 h-10 w-10">
+            <div
+              class="bg-[url('/images/icon-moon.svg')] dark:bg-[url('/images/icon-sun.svg')] h-full w-full bg-contain"
+            ></div>
           </div>
         </div>
 
-        <div class="w-full bg-white p-4 rounded">
+        <div
+          class="w-full bg-white dark:bg-darker-desaturated-blue-dark p-4 rounded"
+        >
           <div class="flex items-center gap-2">
             <div
               id="unchecked"
@@ -34,7 +38,7 @@
               name="entry-input"
               id="entry-input"
               placeholder="Create a new todo..."
-              class="w-full outline-none"
+              class="w-full outline-none dark:bg-darker-desaturated-blue-dark dark:text-light-greyish-blue-dark"
             />
           </div>
         </div>
@@ -42,7 +46,7 @@
     </section>
 
     <section id="entry-section" class="mx-auto -mt-6 px-6 max-w-lg">
-      <div id="entry-list" class="rounded overflow-hidden bg-white">
+      <div id="entry-list" class="rounded overflow-hidden bg-white shadow-2xl">
         <div class="p-3 flex items-center gap-2">
           <div
             id="checked"
