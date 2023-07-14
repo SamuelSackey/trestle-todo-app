@@ -439,6 +439,15 @@ body {
   line-height: 1.75rem;
 }
 
+*::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 9999px;
+}
+
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -548,6 +557,10 @@ body {
   color: hsl(220 98% 61% / var(--tw-text-opacity));
 }
 
+.scrollable::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
 .m-auto {
   margin: auto;
 }
@@ -579,6 +592,10 @@ body {
 
 .h-\[30vh\] {
   height: 30vh;
+}
+
+.h-\[50vh\] {
+  height: 50vh;
 }
 
 .h-full {
@@ -639,6 +656,10 @@ body {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
 }
 
 .truncate {
@@ -749,6 +770,10 @@ body {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.line-through {
+  text-decoration-line: line-through;
 }
 
 .shadow-2xl {

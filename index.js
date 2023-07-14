@@ -1,7 +1,9 @@
 const themeSwitch = document.getElementById("theme-switch");
 const entryInput = document.getElementById("entry-input");
 const entryList = document.getElementById("entry-list");
+const itemNumber = document.getElementById("items-number");
 const navigators = document.querySelectorAll(".navigator");
+const clearButton = document.getElementById("clear");
 const html = document.documentElement;
 let entries = [];
 let listStatus = "all";
@@ -41,7 +43,9 @@ const loadEntries = () => {
       return `
       <div class="p-4 flex items-center gap-2 dark:bg-darker-desaturated-blue-dark dark:text-light-greyish-blue-dark">
           ${checkbox(entry.id, entry.done)}
-          <div class="flex-1 truncate">
+          <div class="flex-1 truncate ${
+            entry.done ? "line-through text-dark-greyish-blue" : ""
+          }">
           ${entry.text}
           </div>
 
@@ -61,6 +65,9 @@ const loadEntries = () => {
   document.querySelectorAll(".checkbox").forEach((checkbox) => {
     checkbox.addEventListener("click", toggleEntry);
   });
+
+  //  Change items number
+  itemNumber.textContent = entries.length;
 };
 
 const addEntry = () => {
@@ -124,6 +131,14 @@ const navigate = (event) => {
   loadEntries();
 };
 
+// clear completed entries function
+const clearCompleted = (event) => {
+  const newEntries = entries.filter((entry) => entry.done === false);
+
+  entries = newEntries;
+  loadEntries();
+};
+
 // Event listeners
 document.addEventListener("DOMContentLoaded", loadEntries);
 
@@ -143,3 +158,5 @@ entryInput.addEventListener("keyup", (event) => {
 navigators.forEach((navigator) => {
   navigator.addEventListener("click", navigate);
 });
+
+clearButton.addEventListener("click", clearCompleted);

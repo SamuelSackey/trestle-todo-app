@@ -50,7 +50,7 @@
         class="rounded overflow-hidden bg-white dark:bg-darker-desaturated-blue-dark shadow-2xl"
       >
         <!-- Entries List -->
-        <div id="entry-list">
+        <div id="entry-list" class="h-[50vh] overflow-y-scroll scrollable">
           <div class="p-3 flex items-center gap-2">
             <div
               id="checked"
@@ -75,7 +75,7 @@
 
         <!-- Bottom Nav -->
         <div
-          class="grid grid-cols-3 items-center p-2 text-sm text-dark-greyish-blue"
+          class="grid grid-cols-3 items-center p-3 text-sm text-dark-greyish-blue"
         >
           <div class="text-xs"><span id="items-number">5</span> items left</div>
 
@@ -95,7 +95,10 @@
             >
           </div>
 
-          <div class="clear text-right text-xs hover:text-darker-greyish-blue">
+          <div
+            id="clear"
+            class="text-right text-xs hover:text-darker-greyish-blue"
+          >
             Clear Completed
           </div>
         </div>
