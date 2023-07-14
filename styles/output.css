@@ -714,6 +714,10 @@ body {
   background-image: url('/images/icon-moon.svg');
 }
 
+.bg-\[url\(\'\/images\/bg-mobile-light\.jpg\'\)\] {
+  background-image: url('/images/bg-mobile-light.jpg');
+}
+
 .bg-contain {
   background-size: contain;
 }
@@ -844,6 +848,10 @@ body {
   background-image: url('/images/icon-sun.svg');
 }
 
+:is(.dark .dark\:bg-\[url\(\'\/images\/bg-mobile-dark\.jpg\'\)\]) {
+  background-image: url('/images/bg-mobile-dark.jpg');
+}
+
 :is(.dark .dark\:text-light-greyish-blue-dark) {
   --tw-text-opacity: 1;
   color: hsl(234 39% 85% / var(--tw-text-opacity));
@@ -865,5 +873,13 @@ body {
 
   .sm\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .sm\:bg-\[url\(\'\/images\/bg-desktop-light\.jpg\'\)\] {
+    background-image: url('/images/bg-desktop-light.jpg');
+  }
+
+  :is(.dark .sm\:dark\:bg-\[url\(\'\/images\/bg-desktop-dark\.jpg\'\)\]) {
+    background-image: url('/images/bg-desktop-dark.jpg');
   }
 }
