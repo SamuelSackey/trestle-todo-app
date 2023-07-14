@@ -22,9 +22,12 @@
           </div>
         </div>
 
-        <form class="w-full bg-white p-4 rounded">
+        <div class="w-full bg-white p-4 rounded">
           <div class="flex items-center gap-2">
-            <div class="rounded-full h-6 w-6 check-color"></div>
+            <div
+              id="unchecked"
+              class="rounded-full h-6 w-6 border border-light-greyish-blue hover:bg-light-greyish-blue-hover-dark"
+            ></div>
 
             <input
               type="text"
@@ -34,15 +37,36 @@
               class="w-full outline-none"
             />
           </div>
-        </form>
+        </div>
       </div>
     </section>
 
-    <div>
-      <ul>
-        <li>item 1</li>
-        <li>item 2</li>
-      </ul>
-    </div>
+    <section id="entry-section" class="mx-auto -mt-6 px-6 max-w-lg">
+      <div id="entry-list" class="rounded overflow-hidden bg-white">
+        <div class="p-3 flex items-center gap-2">
+          <div
+            id="checked"
+            class="rounded-full h-6 w-6 check-color border border-light-greyish-blue hover:opacity-80"
+          >
+            <img
+              src="images/icon-check.svg"
+              alt="uncheck"
+              class="m-auto h-full w-full p-[6px]"
+            />
+          </div>
+          <div class="flex-1 truncate">
+            testfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+          </div>
+
+          <div
+            id="delete"
+            class="flex items-center p-1 hover:bg-light-greyish-blue-hover-dark"
+          >
+            <img src="/images/icon-cross.svg" alt="delete" />
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
+  <script src="index.js"></script>
 </html>
