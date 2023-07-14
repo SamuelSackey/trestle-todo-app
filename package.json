@@ -1,0 +1,14 @@
+{
+  "name": "trestle-todo-app",
+  "version": "1.0.0",
+  "description": "A TODO App",
+  "main": "index.js",
+  "author": "Samuel Sackey",
+  "license": "MIT",
+  "scripts": {
+    "dev": "yarn tailwindcss -i ./styles/input.css -o ./styles/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}
