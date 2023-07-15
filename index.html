@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TO-DO</title>
-    <link href="./styles/output.css" rel="stylesheet" />
+    <link href="./output.css" rel="stylesheet" />
     <link rel="icon" type="image/png" href="images/favicon-32x32.png" />
   </head>
   <body class="dark:bg-dark-blue-dark">
     <section
       id="banner"
-      class="bg-[url('/images/bg-mobile-light.jpg')] dark:bg-[url('/images/bg-mobile-dark.jpg')] sm:bg-[url('/images/bg-desktop-light.jpg')] sm:dark:bg-[url('/images/bg-desktop-dark.jpg')] bg-cover h-[30vh]"
+      class="bg-[url('images/bg-mobile-light.jpg')] dark:bg-[url('images/bg-mobile-dark.jpg')] sm:bg-[url('images/bg-desktop-light.jpg')] sm:dark:bg-[url('images/bg-desktop-dark.jpg')] bg-cover h-[30vh]"
     >
       <div
         class="h-full mx-auto p-6 max-w-lg flex flex-col justify-center gap-6"
@@ -20,7 +20,7 @@
 
           <div id="theme-switch" class="flex items-center p-2 h-10 w-10">
             <div
-              class="bg-[url('/images/icon-moon.svg')] dark:bg-[url('/images/icon-sun.svg')] h-full w-full bg-contain"
+              class="bg-[url('images/icon-moon.svg')] dark:bg-[url('images/icon-sun.svg')] h-full w-full bg-contain"
             ></div>
           </div>
         </div>
@@ -52,26 +52,7 @@
       >
         <!-- Entries List -->
         <div id="entry-list" class="h-[50vh] overflow-y-scroll scrollable">
-          <div class="p-3 flex items-center gap-2">
-            <div
-              id="checked"
-              class="rounded-full h-6 w-6 check-color border border-light-greyish-blue hover:opacity-80"
-            >
-              <img
-                src="images/icon-check.svg"
-                alt="uncheck"
-                class="m-auto h-full w-full p-[6px]"
-              />
-            </div>
-            <div class="flex-1 truncate">testffffffff</div>
-
-            <div
-              id="delete"
-              class="flex items-center p-1 hover:bg-light-greyish-blue-hover-dark"
-            >
-              <img src="/images/icon-cross.svg" alt="delete" />
-            </div>
-          </div>
+          <!-- Fill with entries from js file -->
         </div>
 
         <!-- Bottom Nav -->

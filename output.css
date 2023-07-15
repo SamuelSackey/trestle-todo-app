@@ -706,16 +706,20 @@ body {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'\/images\/bg-desktop-light\.jpg\'\)\] {
-  background-image: url('/images/bg-desktop-light.jpg');
+.bg-\[url\(\'\/images\/bg-mobile-light\.jpg\'\)\] {
+  background-image: url('/images/bg-mobile-light.jpg');
 }
 
 .bg-\[url\(\'\/images\/icon-moon\.svg\'\)\] {
   background-image: url('/images/icon-moon.svg');
 }
 
-.bg-\[url\(\'\/images\/bg-mobile-light\.jpg\'\)\] {
-  background-image: url('/images/bg-mobile-light.jpg');
+.bg-\[url\(\'images\/bg-mobile-light\.jpg\'\)\] {
+  background-image: url('images/bg-mobile-light.jpg');
+}
+
+.bg-\[url\(\'images\/icon-moon\.svg\'\)\] {
+  background-image: url('images/icon-moon.svg');
 }
 
 .bg-contain {
@@ -840,16 +844,20 @@ body {
   background-color: hsl(235 24% 19% / var(--tw-bg-opacity));
 }
 
-:is(.dark .dark\:bg-\[url\(\'\/images\/bg-desktop-dark\.jpg\'\)\]) {
-  background-image: url('/images/bg-desktop-dark.jpg');
+:is(.dark .dark\:bg-\[url\(\'\/images\/bg-mobile-dark\.jpg\'\)\]) {
+  background-image: url('/images/bg-mobile-dark.jpg');
 }
 
 :is(.dark .dark\:bg-\[url\(\'\/images\/icon-sun\.svg\'\)\]) {
   background-image: url('/images/icon-sun.svg');
 }
 
-:is(.dark .dark\:bg-\[url\(\'\/images\/bg-mobile-dark\.jpg\'\)\]) {
-  background-image: url('/images/bg-mobile-dark.jpg');
+:is(.dark .dark\:bg-\[url\(\'images\/bg-mobile-dark\.jpg\'\)\]) {
+  background-image: url('images/bg-mobile-dark.jpg');
+}
+
+:is(.dark .dark\:bg-\[url\(\'images\/icon-sun\.svg\'\)\]) {
+  background-image: url('images/icon-sun.svg');
 }
 
 :is(.dark .dark\:text-light-greyish-blue-dark) {
@@ -879,7 +887,15 @@ body {
     background-image: url('/images/bg-desktop-light.jpg');
   }
 
+  .sm\:bg-\[url\(\'images\/bg-desktop-light\.jpg\'\)\] {
+    background-image: url('images/bg-desktop-light.jpg');
+  }
+
   :is(.dark .sm\:dark\:bg-\[url\(\'\/images\/bg-desktop-dark\.jpg\'\)\]) {
     background-image: url('/images/bg-desktop-dark.jpg');
+  }
+
+  :is(.dark .sm\:dark\:bg-\[url\(\'images\/bg-desktop-dark\.jpg\'\)\]) {
+    background-image: url('images/bg-desktop-dark.jpg');
   }
 }

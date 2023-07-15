@@ -50,7 +50,7 @@ const loadEntries = () => {
           </div>
 
         
-        <img src="/images/icon-cross.svg" alt="delete" id="${entry.id}"
+        <img src="images/icon-cross.svg" alt="delete" id="${entry.id}"
         class="flex items-center p-1 rounded hover:bg-light-greyish-blue-hover-dark dark:hover:bg-dark-greyish-blue-dark delete"/>
         </div>
       `;
@@ -157,7 +157,6 @@ themeSwitch.addEventListener("click", (event) => {
 entryInput.addEventListener("keyup", (event) => {
   if (event.key === "Enter") {
     event.preventDefault();
-    console.log(entryList);
     addEntry();
   }
 });

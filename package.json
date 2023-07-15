@@ -6,7 +6,7 @@
   "author": "Samuel Sackey",
   "license": "MIT",
   "scripts": {
-    "dev": "yarn tailwindcss -i ./styles/input.css -o ./styles/output.css --watch"
+    "dev": "yarn tailwindcss -i ./input.css -o ./output.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.3.3"
